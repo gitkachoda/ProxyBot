@@ -132,6 +132,7 @@ def start_proxy_checker():
         time.sleep(300)  # 5-minute delay before next check
 
 # ✅ Command to Start Proxy Checking
+@bot.message_handler(commands=['startproxy'])
 def start_proxy(message):
     global proxy_checking_active, proxy_thread
 
@@ -146,25 +147,23 @@ def start_proxy(message):
     bot.reply_to(message, "✅ Proxy checking started!")
 
 # ✅ Command to Stop Proxy Checking
+@bot.message_handler(commands=['stop'])
 def stop_proxy(message):
     global proxy_checking_active
     proxy_checking_active = False
     bot.reply_to(message, "❌ Proxy checking stopped!")
 
+# ✅ Handle Invalid Commands
+@bot.message_handler(func=lambda message: True)
+def handle_invalid_command(message):
+    bot.reply_to(message, "❓ Invalid command! Use:\n/startproxy - Start proxy checking\n/stop - Stop proxy checking")
+
 # ✅ Telegram Bot Function
 def run_bot():
-    bot.message_handler(commands=['startproxy'])(start_proxy)
-    bot.message_handler(commands=['stop'])(stop_proxy)
-
-    @bot.message_handler(func=lambda message: True)
-    def handle_all_messages(message):
-        bot.reply_to(message, "❓ Invalid command! Use:\n/startproxy - Start proxy checking\n/stop - Stop proxy checking")
-
     print("\n🚀 Bot is running! Send /startproxy in Telegram to start proxy checking.")
     bot.polling()
 
 # ✅ Run Flask & Bot in Parallel
 if __name__ == "__main__":
-    
     threading.Thread(target=run_bot, daemon=True).start()
-    app.run(host="0.0.0.0", port=PORT)  # ❌ Debug Mode Hata Diya
+    app.run(host="0.0.0.0", port=PORT)
