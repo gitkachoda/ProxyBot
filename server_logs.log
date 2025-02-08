@@ -706,3 +706,31 @@ with app.app_context(). See the documentation for more information.
 2025-02-09 03:36:48,013 - INFO - ❌ Proxy Failed: 13.213.114.238:3128
 2025-02-09 03:36:49,817 - INFO - 🔄 Checking proxy: 52.65.193.254:3128
 2025-02-09 03:36:49,817 - INFO - ❌ Proxy Failed: 52.65.193.254:3128
+2025-02-09 03:57:45,179 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.13.82:5000
+2025-02-09 03:57:45,179 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-09 03:57:46,582 - INFO - ✅ Scraped 100 proxies successfully.
+2025-02-09 03:57:46,815 - INFO - 🔄 Checking proxy: 178.128.113.118:23128
+2025-02-09 03:57:46,815 - INFO - ❌ Proxy Failed: 178.128.113.118:23128
+2025-02-09 03:57:59,338 - INFO - 🔄 Checking proxy: 8.217.124.178:49440
+2025-02-09 03:57:59,338 - INFO - ❌ Proxy Failed: 8.217.124.178:49440
+2025-02-09 03:58:01,019 - INFO - 🔄 Checking proxy: 15.236.203.245:3128
+2025-02-09 03:58:01,019 - INFO - ❌ Proxy Failed: 15.236.203.245:3128
+2025-02-09 03:58:03,206 - INFO - 🔄 Checking proxy: 98.80.66.1:10018
+2025-02-09 03:58:03,206 - INFO - ❌ Proxy Failed: 98.80.66.1:10018
+2025-02-09 03:58:05,009 - INFO - 🔄 Checking proxy: 18.170.42.26:8001
+2025-02-09 03:58:05,009 - INFO - ❌ Proxy Failed: 18.170.42.26:8001
+2025-02-09 03:58:06,948 - INFO - 🔄 Checking proxy: 52.73.224.54:3128
+2025-02-09 03:58:06,948 - INFO - ❌ Proxy Failed: 52.73.224.54:3128
+2025-02-09 03:58:09,012 - INFO - 🔄 Checking proxy: 204.236.137.68:80
+2025-02-09 03:58:09,012 - INFO - ❌ Proxy Failed: 204.236.137.68:80
+2025-02-09 03:58:10,935 - INFO - 🔄 Checking proxy: 3.90.100.12:80
+2025-02-09 03:58:10,935 - INFO - ❌ Proxy Failed: 3.90.100.12:80
+2025-02-09 03:58:12,853 - INFO - 🔄 Checking proxy: 54.152.3.36:80
+2025-02-09 03:58:12,853 - INFO - ❌ Proxy Failed: 54.152.3.36:80
+2025-02-09 03:58:14,605 - INFO - 🔄 Checking proxy: 51.20.19.159:3128
+2025-02-09 03:58:14,605 - INFO - ❌ Proxy Failed: 51.20.19.159:3128
+2025-02-09 03:58:16,543 - INFO - 🔄 Checking proxy: 3.255.250.250:11
+2025-02-09 03:58:16,543 - INFO - ❌ Proxy Failed: 3.255.250.250:11
