@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 # ✅ Load environment variables for Render
 TOKEN = os.getenv("BOT_TOKEN", "7607265539:AAHE0oHuCeHHDoOmbk5ULER7HRyH5HyZd-s")
 CHAT_ID = int(os.getenv("CHAT_ID", "1289304344"))
-PORT = int(os.getenv("PORT", 91231))
+PORT = int(os.getenv("PORT", 5000))
 
 bot = telebot.TeleBot(TOKEN)
 proxy_checking_active = False
@@ -160,10 +160,21 @@ def handle_invalid_command(message):
 
 # ✅ Telegram Bot Function
 def run_bot():
-    print("\n🚀 Bot is running! Send /startproxy in Telegram to start proxy checking.")
-    bot.polling()
+    while True:
+        try:
+            print("\n🚀 Bot is running! Send /startproxy in Telegram to start proxy checking.")
+            bot.polling()
+        except Exception as e:
+            print(f"\n⚠ Bot Crashed! Restarting in 5 seconds... Error: {e}")
+            time.sleep(5)  # Restart after 5 seconds
 
 if __name__ == "__main__":
     threading.Thread(target=run_bot, daemon=True).start()
-    app.run(host="0.0.0.0", port=5000)
 
+    while True:
+        try:
+            print("\n🚀 Starting Flask Server...")
+            app.run(host="0.0.0.0", port=PORT)
+        except Exception as e:
+            print(f"\n⚠ Flask Crashed! Restarting in 5 seconds... Error: {e}")
+            time.sleep(5)  # Restart after 5 seconds
