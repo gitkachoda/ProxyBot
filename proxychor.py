@@ -163,8 +163,7 @@ def run_bot():
     print("\n🚀 Bot is running! Send /startproxy in Telegram to start proxy checking.")
     bot.polling()
 
-# ✅ Run Flask & Bot in Parallel
 if __name__ == "__main__":
-    threading.Thread(target=run_bot, daemon=True).start()  # ✅ Bot ko parallel start karo
-    app.run(host="0.0.0.0", port=PORT)
+    threading.Thread(target=run_bot, daemon=True).start()
+    app.run(host="0.0.0.0", port=5000)
 
