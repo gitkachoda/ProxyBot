@@ -165,5 +165,6 @@ def run_bot():
 
 # ✅ Run Flask & Bot in Parallel
 if __name__ == "__main__":
-    threading.Thread(target=run_bot, daemon=True).start()
+    threading.Thread(target=run_bot, daemon=True).start()  # ✅ Bot ko parallel start karo
     app.run(host="0.0.0.0", port=PORT)
+
