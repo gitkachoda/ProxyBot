@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 # ✅ Load environment variables for Render
 TOKEN = os.getenv("BOT_TOKEN", "7607265539:AAHE0oHuCeHHDoOmbk5ULER7HRyH5HyZd-s")
 CHAT_ID = int(os.getenv("CHAT_ID", "1289304344"))
-PORT = int(os.getenv("PORT", 5000))
+PORT = int(os.getenv("PORT", 91231))
 
 bot = telebot.TeleBot(TOKEN)
 proxy_checking_active = False
