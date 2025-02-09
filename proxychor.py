@@ -38,15 +38,18 @@ def home():
 def status():
     return jsonify({"proxy_checking": proxy_checking_active})
 
-@app.route("/start_proxy")
-def start_proxy_api():
-    start_proxy(None)
-    return jsonify({"message": "✅ Proxy checking started!"})
+@app.route("/keep_alive")
+def keep_alive():
+    logger.info("✅ Keep-alive ping received")
+    return jsonify({"message": "Bot & Flask are active!"})
 
-@app.route("/stop_proxy")
-def stop_proxy_api():
-    stop_proxy(None)
-    return jsonify({"message": "❌ Proxy checking stopped!"})
+def keep_flask_alive():
+    while True:
+        try:
+            requests.get(f"http://127.0.0.1:{PORT}/keep_alive")
+        except Exception as e:
+            logger.warning(f"⚠ Keep-alive failed: {e}")
+        time.sleep(300)  # 5-minute interval
 
 # ✅ Function to Scrape Proxies
 def scrape_proxies():
@@ -170,6 +173,7 @@ def run_bot():
 
 if __name__ == "__main__":
     threading.Thread(target=run_bot, daemon=True).start()
+    threading.Thread(target=keep_flask_alive, daemon=True).start()
 
     while True:
         try:
